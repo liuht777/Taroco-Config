@@ -2,6 +2,8 @@
 
 # 公共配置地址
 base:
+  config:
+    label: master
   auth:
     server: http://localhost:9001
   mysql:
