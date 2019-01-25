@@ -29,19 +29,19 @@ security:
       jwt:
          key-uri: ${base.auth.server}/oauth/token_key #解析jwt令牌所需要密钥的地址
 
-ignore:
-  urls:
-    - /actuator/**
-    - /mobile/**
-    - /auth/**
-    - /admin/code/*
-    - /admin/smsCode/*
-    - /admin/user/info
-    - /admin/menu/userMenu
-    - /swagger-resources/**
-    - /swagger-ui.html
-    - /*/v2/api-docs
-    - /swagger/api-docs
-    - /webjars/**
-  clients:
-    - app
+# oauth2 配置
+taroco:
+  oauth2:
+    url-permit-all:
+      - /actuator/**
+      - /mobile/**
+      - /auth/**
+      - /admin/code/*
+      - /admin/smsCode/*
+      - /admin/user/info
+      - /admin/menu/userMenu
+      - /swagger-resources/**
+      - /swagger-ui.html
+      - /*/v2/api-docs
+      - /swagger/api-docs
+      - /webjars/**
