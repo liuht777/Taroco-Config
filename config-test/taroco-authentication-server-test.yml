@@ -32,13 +32,18 @@ spring:
     suffix: .ftl
     template-loader-path: classpath:/templates/
 
-# permitALl
-ignore:
-  urls:
-    - /actuator/**
-    - /authentication/**
-    - /**/*.css
-    - /**/*.jpg
-    - /**/*.png
-    - /**/*.woff2
-    - /**/*.js
+# oauth2 配置
+taroco:
+  oauth2:
+    key-store:
+      location: classpath:taroco.jks
+      secret: taroco!@#$
+      alias: taroco
+    url-permit-all:
+      - /actuator/**
+      - /authentication/**
+      - /**/*.css
+      - /**/*.jpg
+      - /**/*.png
+      - /**/*.woff2
+      - /**/*.js
