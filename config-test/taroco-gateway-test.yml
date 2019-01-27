@@ -15,6 +15,21 @@ zuul:
   # 需要聚合的swagger服务
   swagger:
     serviceIds: taroco-rbac-service
+  # 限流配置
+  ratelimit:
+    key-prefix: taroco-gateway-ratelimit
+    enabled: true
+    repository: REDIS
+    behind-proxy: true
+    # 给所有service的默认配置
+    default-policy-list:
+      # 每个刷新时间窗口对应的请求数量限制
+      - limit: 1000
+        # 每个刷新时间窗口对应的请求时间限制（秒）
+        quota: 5000
+        # 刷新时间窗口的时间，默认值 (秒), 即: 每60秒只能请求10次
+        refresh-interval: 1
+
 
 security:
   validate:
